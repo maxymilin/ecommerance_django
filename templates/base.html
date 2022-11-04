@@ -29,6 +29,11 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">All</a></li>
+                                {% for c in categories %}
+                                <li>
+                                    <a class="dropdown-item" href="">{{ c.name|title }}</a>
+                                </li>
+                                {% endfor %}
                             </ul>
                         </li>
                     </ul>
