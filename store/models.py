@@ -46,7 +46,6 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-
     class Meta:
         verbose_name_plural = "products"
         ordering = ("-created", )
