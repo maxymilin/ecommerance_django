@@ -4,7 +4,9 @@ from .models import Category, Product
 
 
 def all_products(request):
-    products = Product.objects.all()
+    """Return all products what is active.
+    """
+    products = Product.products.all()
     return render(request, "store/home.html", {"products": products})
 
 

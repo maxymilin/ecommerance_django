@@ -3,6 +3,15 @@ from django.db import models
 from django.urls import reverse
 
 
+class ProductManager(models.Manager):
+    """Product menager for products.
+    """
+    def get_queryset(self):
+        """Product menager forms query to show only active products.
+        """
+        return super(ProductManager, self).get_queryset().filter(is_active=True)
+
+
 class Category(models.Model):
     """A model that defines a category of the product in the database.
     """
@@ -44,6 +53,8 @@ class Product(models.Model):
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    objects = models.Manager()
+    products = ProductManager()
 
     class Meta:
         verbose_name_plural = "products"
