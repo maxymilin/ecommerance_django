@@ -3,8 +3,8 @@ from django.shortcuts import get_object_or_404, render
 from .models import Category, Product
 
 
-def all_products(request):
-    """Return all products what is active.
+def product_all(request):
+    """Return all products what are active.
     """
     products = Product.products.all()
     return render(request, "store/home.html", {"products": products})
