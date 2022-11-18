@@ -14,6 +14,5 @@ class Basket():
         self.session = request.session
         basket = self.session.get("session_key")
         if "session_key" not in request.session:
-            basket = self.session["session_key"] = {}
+            basket = self.session["session_key"] = {'number': 123123123}
         self.basket = basket
-
